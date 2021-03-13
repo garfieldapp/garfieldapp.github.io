@@ -5,56 +5,59 @@
 <head>
 
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width" >
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta keywords="garfield, comic, jim, davis, webapp, mobile, responsive, paws, pwa, progressive, web, app, ios, android, windows, platform, multi, platforms, independent">
-
+    <meta name="description" content="Garfield Comics, Current, Next, Previous, Random, First, Specific Date">
     <title>Daily Garfield</title>
 
-    <link rel="stylesheet" href="main.css">
+    <link rel="stylesheet" href="./main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     
-    <link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
-    <link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
-    <link rel="icon" type="image/png" sizes="16x16" href="favicon-16x16.png">
-    <link rel="manifest" href="manifest.json">
+    <link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="./favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./favicon-16x16.png">
+    <link rel="manifest" href="./manifest.json">
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
-
-    <script>
-      if('serviceWorker' in navigator) {
-        navigator.serviceWorker
-                 .register('serviceworker.js')
-                 .then(function() { console.log("Service Worker Registered"); });
-      }
-      </script>
-
-    <script data-ad-client="ca-pub-8199141612193910" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
- 
-</head>
+    
+    <script src="./app.js"></script>
+    <script src="./swiped-events.min.js"></script>
+    
+  </head>
 
 <body onload=onload()>
-    <script src="app.js"></script>
-    
-    <img src="transparent-garfield-logo-2248x542.png" style="width:100%"/>
-     
-    <br>
+  <div class="logo">
+    <img src="./garlogo.webp" style="width: 100%" alt="Garfield Logo"/>
+  </div>  
 
-    <button class="button" id="Previous" onclick="PreviousClick()">Previous</button>
-    <button class="button" id="First"  onclick="FirstClick()">First</button>
+  <div class="buttongrid">
+    <button class="button" id="Previous" onclick="PreviousClick()"><i class="fa fa-arrow-circle-left"></i>  Previous</button>
     <button class="button" id="Random" onclick="RandomClick()">Random</button>
-    <br>
-    <button class="button" id="Current" onclick="CurrentClick()">Current</button>
-    <button class="button" id="Next" onclick="NextClick()">Next</button>
+    <button class="button" id="Next" onclick="NextClick()">Next  <i class="fa fa-arrow-circle-right"></i></button>
+    <button class="button" id="First"  onclick="FirstClick()">First</button>
     <input id="DatePicker" oninput="DateChange()" type="date" min="1978-06-19">
-    <br><br>
-    
-    <img id="comic" style="width:100vw;  margin-left: -50vw; margin-right: -50vw; position: relative ;right: 50%;left:50%">
+    <button class="button" id="Current" onclick="CurrentClick()">Current</button>
+  </div>  
+  <br><br>
+  <img id="comic" alt="Loading comic from https://gocomics.com..." style="width:100vw;  margin-left: -50vw; margin-right: -50vw; position: relative ;right: 50%;left:50%">
 
-    <br><br>
-
-    <a href = mailto:garfieldapp@outlook.com><img src="mail6.jpg" width="6%"></a>
-    <a href = https://paypal.me/bartmeijer><img src="donatepaypal.png" width="8%"></a>
-   
-  </body>
-
+  <br>
+  <br>
+  
+ <div class="legend"> 
+    <label>Next</label><label>=</label><label>&nbsp;swipe left&nbsp;</label><i class="fa fa-arrow-circle-left"></i>
+    <label>Previous&nbsp;</label><label>=</label><label>&nbsp;swipe right&nbsp;</label><i class="fa fa-arrow-circle-right"></i>
+    <label>Random</label><label>=</label><label>&nbsp;swipe down&nbsp;</label><i class="fa fa-arrow-circle-down"></i>
+    <label>Current</label><label>=</label><label>&nbsp;swipe up&nbsp;</label><i class="fa fa-arrow-circle-up"></i>
+ </div>
+ <br>
+ 
+ <div class="info">
+  <a href = mailto:garfieldapp@outlook.com ><img src="./mail.webp" alt="email address"></a>
+  <a href = https://paypal.me/bartmeijer ><img src="./paypaldonate.webp" alt="donatepaypal"></a>
+  <a href = https://garfieldapp.tk ><img src="./pwa-pass-3.svg" alt="pwa"></a>
+</div>
+</body>
+  
 </html>
