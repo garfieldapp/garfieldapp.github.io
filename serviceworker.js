@@ -90,7 +90,6 @@ const OFFLINE_URL =
   "./android-chrome-192x192.png",
   "./android-chrome-192x192.png"
  ];
-const OFFLINE_URL = 'index.html';
 
 self.addEventListener('install', (event) => {
   event.waitUntil((async () => {
