@@ -21,6 +21,11 @@
     <meta name="msapplication-TileColor" content="#da532c">
     <meta name="theme-color" content="#ffffff">
     
+    <script>
+    if ("serviceWorker" in navigator) {
+      navigator.serviceWorker.register("./serviceworker.js");
+    }
+  </script>
     <script src="./app.js"></script>
     <script src="./swiped-events.min.js"></script>
     
