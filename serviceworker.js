@@ -67,7 +67,7 @@ if (event.request.mode === 'navigate') {
 
 const OFFLINE_VERSION = 2;
 const CACHE_NAME = 'offline';
-const CACHE_NAME = 
+const OFFLINE_URL = 
 [
   "./index.html",
   "./garlogo.webp",
